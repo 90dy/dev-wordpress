@@ -1,0 +1,35 @@
+version: "2"
+
+services:
+    theme0:
+        ports:
+            - "8000:80"
+        environment:
+            - THEME=0
+        extends:
+            service: wordpress
+    theme1:
+        ports:
+            - "8001:80"
+        environment:
+            - THEME=1
+        extends:
+            service: wordpress
+    theme2:
+        ports:
+            - "8002:80"
+        environment:
+            - THEME=2
+        extends:
+            service: wordpress
+    theme3:
+        ports:
+            - "8003:80"
+        environment:
+            - THEME=3
+        extends:
+            service: wordpress
+    wordpress:
+        build: wordpress
+        volumes:
+            - "./backup:/backup"
