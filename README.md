@@ -1,25 +1,27 @@
 # Wordpress Dev with Docker
 
-## Installation
+```bash
+# Installation
 ./bin/install.sh [ service ]
 
-## Database and files backup
+# Database and files backup
 ./bin/backup.sh [ service ]
 
-## Database and files restoration
+# Database and files restoration
 ./bin/restore.sh [ service ]
 
-## Extract wordpress tree for local modifications
+# Extract wordpress tree for local modifications
 ./bin/extract.sh [ service ]
 
-## Send Extracted wordpress tree to remote
+# Send Extracted wordpress tree to remote
 ./bin/insert.sh [ service ]
 
-## Command line service access
+# Command line service access
 ./bin/exec.sh [ service ]
 
-## Reinstall
+# Reinstall
 ./bin/reinstall.sh [ service ]
+```
 
 # License
 MIT

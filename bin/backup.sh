@@ -5,6 +5,8 @@ then
 	exit 1
 fi
 
+mkdir -p ./backup
+
 docker exec -it pianissimes_$1_1 /bin/sh -c \
 "mysqldump --all-databases --add-drop-table -u root -pcprt87 | gzip -c -9 > /backup/$1.db.bak.sql.gz"
 
