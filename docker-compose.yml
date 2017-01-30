@@ -1,32 +1,14 @@
 version: "2"
 
 services:
-    theme0:
+    dev:
         ports:
             - "8000:80"
-        environment:
-            - THEME=0
         extends:
             service: wordpress
-    theme1:
+    prod:
         ports:
-            - "8001:80"
-        environment:
-            - THEME=1
-        extends:
-            service: wordpress
-    theme2:
-        ports:
-            - "8002:80"
-        environment:
-            - THEME=2
-        extends:
-            service: wordpress
-    theme3:
-        ports:
-            - "8003:80"
-        environment:
-            - THEME=3
+            - "80:80"
         extends:
             service: wordpress
     wordpress:
