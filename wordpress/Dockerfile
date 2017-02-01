@@ -1,6 +1,7 @@
 FROM ubuntu:xenial
 
 VOLUME /backup
+VOLUME /usr/share/wordpress
 EXPOSE 80
 
 RUN apt-get update
@@ -17,10 +18,6 @@ RUN apt-get install -y apache2 \
 	mysql-server \
 	vsftpd \
 	wget
-
-RUN wget -nc -O ./backup/wp.tar.gz https://wordpress.org/latest.tar.gz \
-	&& tar -xzf /backup/wp.tar.gz -C /usr/share \
-	&& chown -R www-data:www-data /usr/share/wordpress
 
 COPY apache2/wordpress.conf /etc/apache2/sites-available/wordpress.conf
 RUN service apache2 start \

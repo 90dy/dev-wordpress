@@ -6,11 +6,19 @@ services:
             - "8000:80"
         extends:
             service: wordpress
+        environment:
+            - "SERVICE_NAME=dev"
+        volumes:
+            - "./backup/dev:/usr/share/wordpress"
     prod:
         ports:
             - "80:80"
         extends:
             service: wordpress
+        environment:
+            - "SERVICE_NAME=prod"
+        volumes:
+            - "./backup/prod:/usr/share/wordpress"
     wordpress:
         build: wordpress
         volumes:

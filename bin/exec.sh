@@ -5,4 +5,4 @@ then
 	exit 1
 fi
 
-docker exec -it pianissimes_"$1"_1 /bin/bash
+docker-compose exec $1 bash
