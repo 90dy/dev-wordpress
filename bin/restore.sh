@@ -8,7 +8,7 @@ fi
 docker-compose exec $1 sh -c \
 "gunzip -c /backup/$1.db.bak.sql.gz | mysql -u root -pcprt87"
 
-tar -xf ./backup/$1.wp.bak.tar.gz -C ./backup/
+tar -xf ./backup/$1.wp.bak.tar.gz -C .
 
 docker-compose exec $1 sh -c \
 "chown -R www-data:www-data /usr/share/wordpress"
